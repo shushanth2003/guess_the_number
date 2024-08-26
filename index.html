@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Number</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./font.css">
+</head>
+<body>
+    <div class="container">
+        <p class="para">Guess the Number</h1>
+        <div class="wrapper">
+            <input type="text" placeholder="Enter Something" id="input">
+        </div>
+        <div class="click">
+            <button onclick="change()">click</button>
+        </div>
+        <div class="answer">
+            <p>Your Answer</p>
+            <p id="ans"></p>
+        </div>
+        <div class="rightorwrong" id="correct">
+            <p>Right or wrong</p>
+        </div>
+        <div class="score">
+            <p>Guess number by Computer</p>
+            <p id="Guess"></p>
+        </div>
+    </div>
+</body>
+<script>
+    function change(){
+        var a=Number(document.getElementById("input").value);
+        var rand=Math.round(Math.random()*10)
+        var b=document.getElementById("ans");
+        b.textContent=a;
+        var Guess=document.getElementById("Guess")
+        Guess.textContent=rand
+        if(a==rand){
+            var correct=document.getElementById("correct")
+            correct.textContent="right"
+            correct.style.color="rgb(32, 247, 32)"
+            alert("You Win")
+        }else{
+            var correct=document.getElementById("correct")
+            correct.textContent="Wrong"
+            correct.style.color="yellow"
+            alert("You Lose")
+        }
+    }
+</script>
+</html>  
